@@ -10,4 +10,4 @@ Run `json-server --watch db.json` in order to watch db.json file. Navigate to `h
 
 ## Avocado images
 
-Avocado images was made by my schoolmate Nastya, this is her instagram: @nshynka.
+Avocado images was made by my schoolmate Nastya, this is her instagram: `@nshynka`.
