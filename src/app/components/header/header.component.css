@@ -1,0 +1,336 @@
+#header{
+  height: 48px;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-bottom: 1px solid #c3c3c3;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+#siteName{
+  margin-right: 40px;
+}
+#searchForm{
+  height: 28px;
+  width: 400px;
+  border-radius: 3px;
+  border-color: #edeff1;
+  border-style: solid;
+  border-width: 1px;
+  background-color: #f6f7f9;
+  padding-left: 25px;
+  vertical-align: center;
+  font-size: 15px;
+  margin-left: 14px;
+}
+#searchForm:focus, #searchForm:hover{
+  box-shadow: 0 0 0pt 1pt #0074d2;
+  outline: none;
+  background-color: white;
+}
+.logIn{
+  height: 29px;
+  width: 110px;
+  border-radius: 3px;
+  color: #0079d3;
+  border-color: #0079d3;
+  font-weight: bold;
+}
+.logIn:focus{
+  outline: none;
+}
+.logIn:hover{
+  color: #258dd9;
+  cursor: pointer;
+  outline: none;
+  border: 1px solid #258dd9;
+}
+.logIn:active {
+  color: #0079d3;
+  outline: none;
+  border: 1px solid #0074d2;
+}
+.signUp{
+  height: 29px;
+  width: 110px;
+  border-radius: 3px;
+  color: white;
+  background-color: #0079d3;
+  border-color: #0079d3;
+  font-weight: bold;
+}
+.signUp:focus{
+  outline: none;
+}
+.signUp:hover{
+  color: white;
+  cursor: pointer;
+  outline: none;
+  background-color: #258dd9;
+  border: 1px solid #258dd9;
+}
+.signUp:active{
+  color: white;
+  background-color: #0060a7;
+  outline: none;
+  border-width: 1px;
+  border-color: #0060a7;
+  border-style: solid;
+}
+#formHeader{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 80%;
+}
+#buttonContainer{
+  display: flex;
+  width: 235px;
+  justify-content: space-between;
+  align-items: center;
+}
+#userLoggined{
+  display: flex;
+  min-width: 300px;
+  justify-content: space-between;
+  align-items: center;
+}
+.ssForm{
+  width: 550px;
+  height: 400px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.39);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  transform: translate(-50%,-50%);
+  left: 50vw;
+  top: 50vh;
+  z-index: 15;
+}
+#logInInputForm, #signUpInputForm, #signUpNextInputForm{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 30px;
+}
+#logInInputForm{
+  margin-left: -65px;
+  height: 40%;
+}
+#signUpInputForm{
+  width: 70%;
+  height: 52%;
+}
+#signUpNextInputForm{
+  height: 46%;
+  width: 100%;
+}
+.inputField{
+  height: 28px;
+  width: 280px;
+  border-radius: 3px;
+  border-color: #edeff1;
+  border-style: solid;
+  border-width: 1px;
+  background-color: #f6f7f9;
+  padding-left: 25px;
+  vertical-align: center;
+  font-size: 15px;
+}
+.inputField:focus, .inputField:hover{
+  border: 1px solid rgb(211,211,211);
+  outline: none;
+  background-color: white;
+}
+
+#overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.33);
+  z-index: 10;
+}
+.buttonC {
+  background: transparent;
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  padding: initial;
+  z-index: 5;
+}
+.svgC {
+  height: 20px;
+  fill: grey;
+  width: 20px;
+}
+.bottomGray{
+  width: 550px;
+  height: 40px;
+  background-color: rgba(0,0,0,.03);
+  margin-left: -30px;
+  position: absolute;
+  margin-top: 238px;
+  border-top: 1px solid lightgrey;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#buts{
+  margin-right: 20px;
+  text-decoration: none;
+  color: #0079d3;
+  font-size: 17px;
+  cursor: pointer;
+}
+#buts:hover{
+  color: #258dd9;
+}
+#buts:active{
+  color: #0060a7;
+}
+#butsb{
+  margin-left: 20px;
+  text-decoration: none;
+  color: black;
+  font-size: 17px;
+  cursor: pointer;
+}
+#butsb:hover{
+  color: #258dd9;
+}
+#butsb:active{
+  color: #0060a7;
+}
+.topGray{
+  width: 550px;
+  height: 100px;
+  background-color: rgba(0,0,0,.008);
+  margin-left: -30px;
+  margin-top: -100px;
+  position: absolute;
+  border-bottom: 1px solid lightgrey;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.signUpText{
+  padding: 20px;
+  padding-top: 0px;
+  padding-bottom: 5px;
+}
+.img{
+  width: 100px;
+  height: 400px;
+  background-image: url(../../../assets/img/1.png);
+  background-repeat: no-repeat;
+  position: relative;
+  left: -90px;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+}
+.img2{
+  width: 100px;
+  height: 400px;
+  background-image: url(../../../assets/img/1.png);
+  background-repeat: no-repeat;
+  position: relative;
+  left: -18px;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+}
+.userNameExists{
+  color: #ed3151;
+  font-size: 14px;
+  position: absolute;
+  top: 188px;
+  left: 30px;
+}
+.emailNameExists{
+  color: #ed3151;
+  font-size: 14px;
+  position: absolute;
+  top: 249px;
+}
+#imgHeader{
+  width: 55px;
+  height: 50px;
+  background-image: url("../../../assets/img/icon.png");
+  background-size: 55px 55px;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.sortBy{
+  height: 30px;
+  width: 202px;
+  border-radius: 3px;
+  border: 1px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.sortBy:focus{
+  outline: none;
+  border: 1px solid #edeff1;
+}
+.sortBy:hover{
+  border: 1px solid #edeff1;
+}
+
+.alignHeader{
+  display: flex;
+}
+#sortStuff{
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-color: white;
+  border: 1px solid #edeff1;
+  border-top: none;
+  top: 30px;
+}
+.myPost{
+  height: 29px;
+  width: 110px;
+  border-radius: 3px;
+  color: white;
+  background-color: rgb(234,0,39);
+  border-color: rgb(234,0,39);
+  font-weight: bold;
+}
+.myPost:focus{
+  outline: none;
+}
+.myPost:hover{
+  color: white;
+  cursor: pointer;
+  outline: none;
+  background-color: #ed3151;
+  border: 1px solid #ed3151;
+}
+.myPost:active{
+  color: white;
+  background-color: #a61d34;
+  outline: none;
+  border-width: 1px;
+  border-color: #a61d34;
+  border-style: solid;
+}

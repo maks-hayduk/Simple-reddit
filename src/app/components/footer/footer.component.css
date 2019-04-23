@@ -1,0 +1,100 @@
+#footer{
+  height: 170px;
+  width: 300px;
+  border-radius: 6px;
+  border: 1px solid #f1f1f1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+  background-color: white;
+}
+#createPost{
+  height: 150px;
+  width: 300px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #f1f1f1;
+  background-color: white;
+  font-weight: lighter;
+  margin-bottom: 12px;
+}
+.signUp{
+  height: 33px;
+  width: 300px;
+  border-radius: 3px;
+  color: white;
+  background-color: #0079d3;
+  border-color: #0079d3;
+  font-weight: bold;
+  font-size: 13px;
+}
+.signUp:focus{
+  outline: none;
+}
+.signUp:hover{
+  color: white;
+  cursor: pointer;
+  outline: none;
+  background-color: #258dd9;
+  border: 1px solid #258dd9;
+}
+.signUp:active{
+  color: white;
+  background-color: #0060a7;
+  outline: none;
+  border-width: 1px;
+  border-color: #0060a7;
+  border-style: solid;
+}
+#imgPost{
+  width: 322px;
+  height: 35px;
+  background-size: 322px 35px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  margin-left: -11px;
+  margin-top: -11px;
+  background-image: url("../../../assets/img/cp.png");
+  background-repeat: no-repeat;
+}
+#createPostText{
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+#rules{
+  height: 230px;
+  width: 300px;
+  border-radius: 6px;
+  border: 1px solid #f1f1f1;
+  padding: 10px;
+  font-size: 16px;
+  background-color: white;
+  margin-bottom: 12px;
+  margin-top: 35px;
+}
+.postRules{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 17px;
+}
+li {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid #dbdada;
+  width: 97%;
+}
+.alignRules{
+  display: flex;
+  align-items: center;
+}
+#imgRules{
+  width: 55px;
+  height: 50px;
+  background-image: url("../../../assets/img/qa.png");
+  background-size: 55px 55px;
+  background-position: center center;
+  background-repeat: no-repeat;
+}

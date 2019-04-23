@@ -1,0 +1,53 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "maxon",
+      "password": "qwerty123",
+      "email": "maks.hayduk@gmail.com"
+    },
+    {
+      "id": 2,
+      "username": "1",
+      "password": "1",
+      "email": "1"
+    },
+    {
+      "id": 3,
+      "username": "IceLark",
+      "password": "milenium",
+      "email": "shit@gmail.com"
+    },
+    {
+      "id": 4,
+      "username": "2",
+      "password": "2",
+      "email": "2"
+    },
+    {
+      "id": 5,
+      "username": "3",
+      "password": "3",
+      "email": "3"
+    },
+    {
+      "id": 6,
+      "username": "jopa",
+      "password": "jopa228",
+      "email": "sadasasdd"
+    },
+    {
+      "id": 7,
+      "username": "",
+      "password": "sfasdfa",
+      "email": ""
+    },
+    {
+      "id": 8,
+      "username": "testing",
+      "password": "qwerty123",
+      "email": "testingmail@gmail.com"
+    }
+  ],
+  "posts": []
+}

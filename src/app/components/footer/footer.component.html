@@ -1,0 +1,35 @@
+<div id="createPost" *ngIf="ifLoggined">
+  <div id="imgPost"></div>
+  <div>
+    <p id="createPostText">Your personal Reddit frontpage. Come here to check in with your favorite communities.</p>
+    <button type="button" class="signUp" (click)="createPostWindow()">CREATE POST</button>
+  </div>
+</div>
+
+<div id="rules" *ngIf="showPost">
+  <div class="alignRules">
+    <div id="imgRules"></div>
+    <p class="postRules">Posting to Avocaduu</p>
+  </div>
+  <ol>
+    <li></li>
+    <li>1. Remember the human</li>
+    <li>2. Behave like you would in real life</li>
+    <li>3. Look for the original source of content</li>
+    <li>4. Search for duplicates before posting</li>
+    <li>5. Read the community’s rules</li>
+  </ol>
+</div>
+
+<div id="footer">
+  <p>This site was mede by Maks Hayduk, a student of LNU Computer science </p>
+  <div>
+    <p>Contact me:</p>
+    <p>maks.hayduk@gmail.com</p>
+    <p>github@maxon-h</p>
+  </div>
+  <p>© 2019 Avocaduu, Inc. All rights reserved</p>
+</div>
+
+
+

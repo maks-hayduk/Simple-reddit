@@ -1,0 +1,119 @@
+<div id="spaceBefore"></div>
+<div *ngIf="!createPost && !postuser">
+  <div class="mainContent" *ngFor="let item of data | search:searchedInput;let i = index">
+    <div class="mainRating">
+      <button type="button" class="buttonVoteUp" (click)="voteUp(i)" [disabled]="!loggined"></button>
+      <p class="ratingText">{{item.rating}}</p>
+      <button type="button" class="buttonVoteDown" style="margin-top: 5px" (click)="voteDown(i)" [disabled]="!loggined"></button>
+    </div>
+    <div class="mainText">
+      <p class="postedBy"><span style="font-weight: bold">{{item.topic | slice:0:20}} </span><span class="postUser">• Posted by {{item.author}} {{item.time}}</span></p>
+      <p class="postName">{{item.title | slice:0:70}}</p>
+      <p class="postText" >{{item.postText | slice:0:450}}</p>
+      <div class="postImg"></div>
+      <div class="alignButsDel">
+        <a class="comments" (click) = "commentWindow(i)">{{item.comments.length}} Comments</a>
+        <button type="button" class="delButPost" (click)="delPost(i)" [disabled]="foundUser(i)"></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!createPost && postuser">
+  <div class="mainContent" *ngFor="let item of userPostsUn | userPosts:username | search:searchedInput;let i = index">
+    <div class="mainRating">
+      <button type="button" class="buttonVoteUp" (click)="voteUp(i)" [disabled]="!loggined"></button>
+      <p class="ratingText">{{item.rating}}</p>
+      <button type="button" class="buttonVoteDown" style="margin-top: 5px" (click)="voteDown(i)" [disabled]="!loggined"></button>
+    </div>
+    <div class="mainText">
+      <p class="postedBy"><span style="font-weight: bold">{{item.topic | slice:0:20}} </span><span class="postUser">• Posted by {{item.author}} {{item.time}}</span></p>
+      <p class="postName">{{item.title | slice:0:70}}</p>
+      <p class="postText" >{{item.postText | slice:0:450}}</p>
+      <div class="postImg"></div>
+      <div class="alignButsDel">
+        <a class="comments" (click) = "commentWindowPost(i)">{{item.comments.length}} Comments</a>
+        <button type="button" class="delButPost" (click)="delPostPost(i)" [disabled]="foundUser(i)"></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="commentWindow" *ngIf="commentFullWindow">
+  <div id="alignBlackBlock">
+    <div id="comHeader"></div>
+    <button class="buttonC" (click)="closeCommentWindow()">
+      <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" class="svgC">
+        <polygon fill="inherit" points="11.649 9.882 18.262 3.267 16.495 1.5 9.881 8.114 3.267 1.5 1.5 3.267 8.114 9.883 1.5 16.497 3.267 18.264 9.881 11.65 16.495 18.264 18.262 16.497"></polygon>
+      </svg>
+      <span style="padding-top: -10px;">Close</span>
+    </button>
+  </div>
+  <div class="commentContent">
+    <div class="mainRating mainRatingCom">
+      <button type="button" class="buttonVoteUp" (click)="voteUp(commentId)" [disabled]="!loggined"></button>
+      <p class="ratingText">{{data[commentId].rating}}</p>
+      <button type="button" class="buttonVoteDown" style="margin-top: 5px" (click)="voteDown(commentId)" [disabled]="!loggined"></button>
+    </div>
+    <div class="mainTextComment">
+      <p class="postedBy"> <span style="font-weight: bold">{{data[commentId].topic}} </span><span class="postUser">• Posted by {{data[commentId].author}} {{data[commentId].time}}</span></p>
+      <p class="postName">{{data[commentId].title}}</p>
+      <p class="postText">{{data[commentId].postText}}</p>
+      <div class="postImg"></div>
+      <p style="font-size: 13px;margin-left: 15px;margin-bottom: 5px;">Comment as <span class="postedCom">{{username}}</span></p>
+      <textarea id="textArea" placeholder="What are your thoughts?" name="comment" [(ngModel)]="commentInput"></textarea>
+      <button type="button" class="subButton" (click)="pushComment()" [disabled]="!commentInput || username === 'undefinedUser'">Comment</button>
+      <hr width="553px" style="margin-left: 15px;margin-bottom: 27px;">
+      <div class="commentsText" *ngFor="let com of data[commentId].comments">
+        <p class="alignAllStuuf"><span class="postedCom">{{com.commentator}}</span><span class="postedTime"> · {{com.time}}</span></p>
+        <p>{{com.commentText}}</p>
+      </div>
+    </div>
+  </div>
+  <div id="footer">
+    <p>This site was mede by Maks Hayduk, a student of LNU Computer science </p>
+    <div>
+      <p>Contact me:</p>
+      <p>maks.hayduk@gmail.com</p>
+      <p>github@maxon-h</p>
+    </div>
+    <p>© 2019 Avocaduu, Inc. All rights reserved</p>
+  </div>
+</div>
+
+<div class="toptp" *ngIf="createPost">
+  <div class="postCreate">
+    <p>Create a post</p>
+    <hr width="700px">
+  </div>
+  <div class="madeComment">
+    <input type="text" class="topicComment" placeholder="Topic" [(ngModel)]="postTopic" name="topic" autocomplete="off">
+    <input type="text" class="inputComment" placeholder="Title" [(ngModel)]="postTitle" name="title" autocomplete="off">
+    <textarea class="textComment" placeholder="Text (optional)" [(ngModel)]="postText" name="text"></textarea>
+    <div class="alignButs">
+      <button type="button" class="cancelPost" (click)="cancelCreatingPost()">Cancel</button>
+      <button type="button" class="postPost" (click)="postPots()" [disabled]="!(postTopic && postTitle && postText)">Post</button>
+    </div>
+  </div>
+</div>
+
+<div class="delPost" *ngIf="areYouSure">
+  <div class="delPostTop">
+    <span class="delPostSpan">Delete post?</span>
+    <button class="buttonCC" (click)="cancelSure()">
+      <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" class="svgC">
+        <polygon fill="inherit" points="11.649 9.882 18.262 3.267 16.495 1.5 9.881 8.114 3.267 1.5 1.5 3.267 8.114 9.883 1.5 16.497 3.267 18.264 9.881 11.65 16.495 18.264 18.262 16.497"></polygon>
+      </svg>
+    </button>
+  </div>
+  <hr width="450px" style="margin-left: -11px;margin-top: 12px;">
+  <p class="areYouSure">Are you sure you want to delete your post? You can't undo this.</p>
+  <div class="butsDelPost">
+    <button type="button" class="cancleDelPost" (click)="cancelSure()">CANCEL</button>
+    <button type="button" class="delPostComp" (click)="areYouSureToDelete()">DELETE POST</button>
+  </div>
+</div>
+
+<div id="overlay" *ngIf="commentFullWindow"></div>
+<div id="overlay1" *ngIf="deletePost"></div>
+

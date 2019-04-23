@@ -1,0 +1,79 @@
+<div id="header">
+  <div id="imgHeader"></div>
+  <h1 id="siteName">{{siteName}}</h1>
+  <form action="" id="formHeader">
+    <div class="alignHeader">
+      <!--<div>-->
+        <!--<button class="sortBy" (click)="openOptions()">Sort</button>-->
+        <!--<div id="sortStuff" *ngIf="options">-->
+          <!--<button type="button">asdasd</button>-->
+        <!--</div>-->
+      <!--</div>-->
+      <input type="text" name="search" id="searchForm" placeholder="Search {{siteName}}" autocomplete="off" [(ngModel)]="search" (keyup)="onKey($event)">
+    </div>
+     <div id="buttonContainer">
+      <button type="button" class="logIn" (click)="logInFormShown()" *ngIf="!visableUser">LOG IN</button>
+      <button type="button" class="signUp" (click)="signUpFormShown()" *ngIf="!visableUser">SIGN UP</button>
+    </div>
+    <div *ngIf="visableUser" id="userLoggined">
+      <span>{{username}}</span>
+      <button type="button" class="myPost" (click)="myPostUser()" *ngIf="!key">All posts</button>
+      <button type="button" class="logIn" (click)="myPostUser()" *ngIf="key">My posts</button>
+      <button type="button" class="signUp" (click)="logOutUser()">Log out</button>
+
+    </div>
+  </form>
+</div>
+
+<div class="ssForm" *ngIf="signInShown">
+  <div class="img"></div>
+  <button class="buttonC" (click)="closeScreen()">
+    <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" class="svgC">
+      <polygon fill="inherit" points="11.649 9.882 18.262 3.267 16.495 1.5 9.881 8.114 3.267 1.5 1.5 3.267 8.114 9.883 1.5 16.497 3.267 18.264 9.881 11.65 16.495 18.264 18.262 16.497"></polygon>
+    </svg>
+  </button>
+  <form action="" id="logInInputForm">
+    <p>Sign in</p>
+    <input type="text" class="inputField" placeholder="Username" [(ngModel)] = 'logInUsername' name="loginUser" autocomplete="off">
+    <input type="password" class="inputField" placeholder="Password" [(ngModel)] = 'logInPassword' name="passUser" autocomplete="off">
+    <button type="button" class="signUp" (click)="signIn()">SIGN IN</button>
+  </form>
+</div>
+
+
+
+<div class="ssForm" *ngIf="signUpShown">
+  <div class="img2" *ngIf="formSignUp"></div>
+  <button class="buttonC" (click)="closeScreen()">
+    <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" class="svgC">
+      <polygon fill="inherit" points="11.649 9.882 18.262 3.267 16.495 1.5 9.881 8.114 3.267 1.5 1.5 3.267 8.114 9.883 1.5 16.497 3.267 18.264 9.881 11.65 16.495 18.264 18.262 16.497"></polygon>
+    </svg>
+  </button>
+  <form action="" id="signUpInputForm" *ngIf="formSignUp">
+    <p style="font-weight: bold;">Join the worldwide conversation.</p>
+    <p>By having a {{title}} account, you can subscribe, vote, and comment on all your favorite {{title}} memes.<br/>
+      Sign up in just seconds.</p>
+    <input type="email" class="inputField" placeholder="email" [(ngModel)] = 'emailInput' name="mail" autocomplete="off">
+    <span *ngIf="emailNameExists" class="emailNameExists">Email already exists</span>
+    <button type="button" class="signUp" (click)="nextForm()">NEXT</button>
+  </form>
+  <form action="" id="signUpNextInputForm" *ngIf="formSignUpNext">
+    <div class="topGray">
+      <p class="signUpText" style="font-weight: bold; font-size: 16px">Choose your username</p>
+      <p class="signUpText">Your username is how other community members will see you. This name will be used to credit you for things you share on Reddit. What should we call you?</p>
+    </div>
+    <hr size="1">
+    <input type="text" class="inputField" placeholder="Choose your username" [(ngModel)] = 'usernameInput' name="userName" autocomplete="off">
+    <span *ngIf="userNameExists" class="userNameExists">Username already exists</span>
+    <input type="password" class="inputField" placeholder="Password" [(ngModel)] = 'passwordInput' name="pass" autocomplete="off">
+    <hr>
+    <div *ngIf="formSignUpNext" class="bottomGray">
+      <a id="butsb" (click)="backToFormSignUp()">Back</a>
+      <a id="buts" (click)="addUserToJson()">Next</a>
+    </div>
+  </form>
+
+</div>
+<div class="clas"></div>
+
+<div id="overlay" *ngIf="signInShown || signUpShown"></div>

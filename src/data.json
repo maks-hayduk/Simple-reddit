@@ -1,0 +1,54 @@
+{
+  "users":[
+    {
+      "username": "maxon",
+      "password": "qwerty123",
+      "email": "maks.hayduk@gmail.com"
+    }
+
+  ],
+  "posts":[
+    {
+      "topic": "News",
+      "author": "John",
+      "title": "Boeing Ethiopia crash probe 'finds anti-stall device activated",
+      "postText": "MCAS is software designed to help prevent the 737 Max 8 from stalling.It reacts when sensors in the nose of the aircraft show the jet is climbing at too steep an angle, which can cause planes to stall.But an investigation of the Lion Air flight last year suggested the system malfunctioned, and forced the plane's nose down more than 20 times before it crashed into the sea killing all 189 passengers and crew.",
+      "rating": 18,
+      "time": "18:35:15",
+      "img": "",
+      "comments": [
+        {
+          "commentator": "Ostap",
+          "time": "18:45:16",
+          "commentText": "That is incredible"
+        },
+        {
+          "commentator": "Taras",
+          "time": "19:05:54",
+          "commentText": "That is incredible"
+        }
+      ]
+    },
+    {
+      "topic": "News",
+      "author": "Andrew",
+      "title": "Secret tape increases pressure on Trudeau in SNC-Lavalin affair",
+      "postText": "Canadian Prime Minister Justin Trudeau is under new pressure after his former justice minister released documents relating to a major corruption scandal.Jody Wilson-Raybould says government officials tried to persuade her to shield SNC-Lavalin from prosecution.",
+      "rating": 27,
+      "time": "12:34:17",
+      "img": "",
+      "comments": [
+        {
+          "commentator": "Nastya",
+          "time": "18:45:16",
+          "commentText": "Naec"
+        },
+        {
+          "commentator": "Maks",
+          "time": "19:05:54",
+          "commentText": "ahahahha no"
+        }
+      ]
+    }
+  ]
+}

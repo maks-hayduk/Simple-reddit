@@ -1,0 +1,552 @@
+.mainContent{
+  display: flex;
+  flex-direction: row;
+  width: 650px;
+  min-height: 100px;
+  max-height: 350px;
+  background-color: white;
+  border: 1px solid #c3c3c3;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+.mainContent:hover{
+  border: 1px solid #929292;
+}
+.mainRating{
+  width: 50px;
+  background-color: #f7f9fa;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.mainText{
+  width: 600px;
+  max-height: 350px;
+  background-color: white;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.buttonVoteUp{
+  width: 20px;
+  height: 20px;
+  margin-top: 10px;
+  background: transparent;
+  padding: initial;
+  border: none;
+  border-radius: 4px;
+}
+.buttonVoteUp:active, .buttonVoteDown:active{
+  background-color: #e8e8e8;
+  outline: none;
+}
+.buttonVoteUp:focus, .buttonVoteDown:focus{
+  background-color: #e8e8e8;
+  outline: none;
+}
+.buttonVoteUp::before{
+  content: '';
+  background: url("../../../assets/img/up.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 25px 25px;
+  height: 25px;
+  width: 25px;
+  position: absolute;
+  margin-left: -12.5px;
+  margin-top: -12px;
+}
+.buttonVoteUp:hover::before {
+  background: url("../../../assets/img/uph.png");
+  background-size: 25px 25px;
+}
+.buttonVoteDown:hover::before {
+  background: url("../../../assets/img/downh.png");
+  background-size: 25px 25px;
+}
+.buttonVoteUp:active::before {
+  background: url("../../../assets/img/upc.png");
+  background-size: 25px 25px;
+}
+.buttonVoteDown:active::before {
+  background: url("../../../assets/img/downc.png");
+  background-size: 25px 25px;
+}
+.buttonVoteDown{
+  background: transparent;
+  padding: initial;
+  border: none;
+  width: 20px;
+  height: 20px;
+  margin-top: 3px;
+  border-radius: 4px;
+}
+.buttonVoteDown::before{
+  content: '';
+  background: url("../../../assets/img/down.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 25px 25px;
+  height: 25px;
+  width: 25px;
+  position: absolute;
+  margin-left: -12.5px;
+  margin-top: -13px;
+}
+.ratingText{
+  font-size: 13px;
+  font-weight: bold;
+  margin-top: 3px;
+}
+.postedBy{
+  margin-top: 10px;
+  margin-left: 15px;
+  font-size: 13px;
+}
+.postUser{
+  color: #acb2b8;
+}
+.postName{
+  margin-left: 15px;
+  margin-top: 12px;
+  font-size: 18px;
+}
+.postText{
+  margin-left: 15px;
+  margin-top: 14px;
+  font-size: 16px;
+  margin-right: 40px;
+}
+.comments{
+  display: flex;
+  align-items: center;
+  margin-left: 15px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  height: 24px;
+  width: 90px;
+  font-size: 12px;
+  color: #6e7073;
+  padding-left: 25px;
+  font-weight: bold;
+}
+.comments:hover{
+  background-color: #dae0e6;
+  border-radius: 3px;
+  cursor: pointer;
+}
+#spaceBefore{
+  margin-top: 60px;
+}
+#overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.7);
+  z-index: 1;
+}
+#commentWindow{
+  width: 1000px;
+  /*background-color: #929ba0;*/
+  background-color: #eeffee;
+  min-height: 150px;
+  /*position: fixed;*/
+  position: absolute;
+  top: 0px;
+  z-index: 2;
+  border-radius: 5px;
+  padding-bottom: 30px;
+  margin-left: -50px;
+  padding-right: 100px;
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+.commentContent{
+  margin-top: 65px;
+  padding-bottom: 30px;
+  margin-left: 35px;
+  display: flex;
+  flex-direction: row;
+  width: 650px;
+  min-height: 100px;
+  background-color: white;
+  border: 1px solid #c3c3c3;
+  border-radius: 5px;
+}
+
+.commentContent:hover{
+  border: 1px solid #f1f1f1;
+}
+.commentsText{
+  margin-top: 10px;
+  margin-left: 15px;
+}
+.mainRatingCom{
+  background-color: white;
+}
+.postedCom{
+  font-size: 12px;
+  color: #EA0027;
+}
+.postedTime{
+  font-size: 12px;
+  color:#7C7C7C;
+}
+.postImg{
+  margin-bottom: 30px;
+}
+#textArea {
+  margin-left: 15px;
+  width: 535px;
+  height: 100px;
+  resize: vertical;
+  padding-top: 10px;
+  padding-left: 15px;
+  font-size: 15px;
+  border: 1px solid #dae0e6;
+  border-radius: 4px;
+  white-space: pre-wrap;
+}
+#textArea:active, #textArea:focus, #textArea:hover{
+  outline: none;
+  border: 1px solid black;
+}
+.svgC {
+  fill: #828586;;
+  height: 15px;
+  width: 15px;
+}
+.buttonC {
+  background: transparent;
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  border: none;
+  cursor: pointer;
+  padding: initial;
+  z-index: 5;
+  color: #828586;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80px;
+  height: 30px;
+  border-radius: 5px;
+  margin-top: -8px;
+}
+.buttonC:hover{
+  background-color: #343537;
+}
+.buttonC:active{
+  outline: none;
+}
+.subButton{
+  height: 29px;
+  width: 110px;
+  border-radius: 5px;
+  background-color: rgb(234,0,39);
+  color: white;
+  font-weight: bold;
+  font-size: 13px;
+  margin-left: 460px;
+  margin-top: 8px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.subButton:hover{
+  background-color: #ed3151;
+}
+.subButton:active{
+  background-color: #a61d34;
+}
+.subButton:focus{
+  outline: none;
+}
+#comHeader{
+  position: absolute;
+  width: 100%;
+  height: 45px;
+  background-color: black;
+  top: -1px;
+}
+
+.madeComment{
+  width: 660px;
+  min-height: 250px;
+  background-color: white;
+  margin-top: 115px;
+  margin-left: -50px;
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid #f1f1f1;
+}
+.inputComment{
+  width: 97%;
+  height: 28px;
+  padding-left: 20px;
+  font-size: 15px;
+  border: 1px solid #dae0e6;
+  border-radius: 4px;
+}
+.textComment{
+  margin-top: 8px;
+  width: 97%;
+  height: 145px;
+  border: 1px solid #dae0e6;
+  border-radius: 4px;
+  resize: vertical;
+  padding-top: 10px;
+  padding-left: 20px;
+  font-size: 15px;
+  /*white-space: pre-line;*/
+  white-space: pre-wrap;
+}
+.topicComment{
+  margin-bottom: 8px;
+  width: 90px;
+  height: 28px;
+  font-size: 15px;
+  padding-left: 20px;
+  border-radius: 4px;
+  border: 1px solid #dae0e6;
+}
+.inputComment:active, .inputComment:focus, .inputComment:hover, .textComment:active, .textComment:focus, .textComment:hover, .topicComment:active, .topicComment:focus, .topicComment:hover{
+  outline: none;
+  border: 1px solid black;
+}
+.postCreate{
+  position: absolute;
+  top: 72px;
+  left: -50px;
+}
+.alignButs{
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+.cancelPost{
+  height: 29px;
+  width: 95px;
+  border-radius: 3px;
+  color: #0079d3;
+  border-color: #0079d3;
+  font-weight: bold;
+  font-size: 13px;
+  margin-right: 13px;
+}
+.cancelPost:focus{
+  outline: none;
+}
+.cancelPost:hover{
+  color: #258dd9;
+  cursor: pointer;
+  outline: none;
+  border: 1px solid #258dd9;
+}
+.cancelPost:active {
+  color: #0079d3;
+  outline: none;
+  border: 1px solid #0074d2;
+}
+.postPost{
+  height: 29px;
+  width: 75px;
+  border-radius: 3px;
+  color: white;
+  background-color: #0079d3;
+  border-color: #0079d3;
+  font-weight: bold;
+  font-size: 13px;
+}
+.postPost:focus{
+  outline: none;
+}
+.postPost:hover{
+  color: white;
+  cursor: pointer;
+  outline: none;
+  background-color: #258dd9;
+  border: 1px solid #258dd9;
+}
+.postPost:active{
+  color: white;
+  background-color: #0060a7;
+  outline: none;
+  border-width: 1px;
+  border-color: #0060a7;
+  border-style: solid;
+}
+#footer{
+  height: 170px;
+  width: 300px;
+  border-radius: 6px;
+  border: 1px solid #f1f1f1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+  background-color: white;
+  margin-left: 20px;
+  margin-top: 65px;
+}
+.mainTextComment{
+  width: 600px;
+  min-height: 150px;
+  background-color: white;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.delButPost{
+  height: 25px;
+  width: 25px;
+  margin-right: 10px;
+  margin-top: 10px;
+  border: none;
+  background-image: url("../../../assets/img/trashGrey.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 15px;
+  cursor: pointer;
+}
+.delButPost:hover{
+  background-image: url("../../../assets/img/trashBlack.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 15px;
+}
+.delPostComp:active{
+  outline: none;
+}
+#deletePost{
+  width: 100px;
+  height: 100px;
+  background-color: #7C7C7C;
+  z-index: 2;
+}
+#overlay1 {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.7);
+  z-index: 2;
+}
+.delPost{
+  position: fixed;
+  box-shadow: 0px 0px 19px 0px rgba(120,120,120,0.83);
+  transform: translate(-50%,-50%);
+  width: 430px;
+  height: 170px;
+  padding: 10px;
+  border-radius: 5px;
+  top: 50vh;
+  left: 50vw;
+  background-color: white;
+  z-index: 3;
+  border: 1px solid #f1f1f1;
+}
+.buttonCC {
+  background: transparent;
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  padding: initial;
+  z-index: 5;
+}
+.delPostTop{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.delPostSpan{
+  margin-top: 8px;
+  font-weight: 500;
+}
+.areYouSure{
+  font-weight: 100;
+  font-size: 14px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.butsDelPost{
+  background-color: #edeff2;
+  width: 452px;
+  height: 68px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin-left: -11px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.delPostComp{
+  height: 33px;
+  width: 115px;
+  background-color: #ea0026;
+  color: white;
+  font-weight: 600;
+  border-radius: 4px;
+  border: 1px solid #ea0026;
+  cursor: pointer;
+  margin-right: 15px;
+}
+.delPostComp:hover{
+  background-color: #ee3152;
+}
+.delPostComp:focus{
+  outline: none;
+}
+.delPostComp:active{
+  border: 1px solid #0079d3;
+  background-color: #0079d3;
+}
+.cancleDelPost{
+  height: 33px;
+  width: 80px;
+  background-color: #edeff2;
+  color: #75787a;
+  font-weight: 600;
+  border-radius: 4px;
+  border: 1px solid #75787a;
+  cursor: pointer;
+  margin-right: 13px;
+}
+.cancleDelPost:hover {
+  color: #888a8c;
+  border: 1px solid #888a8c;
+}
+.cancleDelPost:focus{
+  outline: none;
+}
+.cancleDelPost:active{
+  color: #6e7073;
+  border: 1px solid #6e7073;
+}
+.alignButsDel{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.alignAllStuuf{
+  display: flex;
+  align-items: center;
+}
+#alignBlackBlock{
+  width: 1100px;
+  position:fixed;
+}

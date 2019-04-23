@@ -1,0 +1,11 @@
+.container{
+  width: 1000px;
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.foot{
+  margin-top: 61px;
+}
